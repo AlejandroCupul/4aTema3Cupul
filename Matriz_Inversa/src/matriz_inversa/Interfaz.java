@@ -10,10 +10,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 
-/**
- *
- * @author Arturo
- */
+
 public class Interfaz extends javax.swing.JFrame {
 
     /**
@@ -26,8 +23,8 @@ public class Interfaz extends javax.swing.JFrame {
         lblInstruccion2.setVisible(false);
         btnCalcular.setVisible(false);
         lblNota.setVisible(false);
-        //SNumerosTF(Tamaño);
-        //SNumerosTBL(table);
+        SNumerosTF(Tamaño); //Para el primer dato que define tamaño
+        SNumerosTBL(table);//Para cada uno de los datos de la matriz
     }
 
     /**
@@ -178,6 +175,30 @@ public class Interfaz extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
      //Generar los llamados KeyListenr para que solo se acepten números :o
+    //Correcion para poder ingresar solo valores numericos
+    public void SNumerosTF(TextField a) {
+       a.addKeyListener(new KeyAdapter() {
+           public void keyTyped(KeyEvent e) {
+               char c = e.getKeyChar();
+               if(!Character.isDigit(c)) {
+                   getToolkit().beep();
+                   e.consume();
+               }
+           }
+       });
+    }
+    
+    public void SNumerosTBL(JTable a) {
+       a.addKeyListener(new KeyAdapter() {
+           public void keyTyped(KeyEvent e) {
+               char c = e.getKeyChar();
+               if(Character.isLetter(c)) {
+                   getToolkit().beep();
+                   e.consume();
+               }
+           }
+       });
+    }
     
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
         // TODO add your handling code here:

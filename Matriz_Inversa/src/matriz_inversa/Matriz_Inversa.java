@@ -8,10 +8,7 @@ package matriz_inversa;
 import java.util.Scanner;
 import javax.swing.JFrame;
 
-/**
- *
- * @author Arturo
- */
+
 public class Matriz_Inversa {
 
     /**

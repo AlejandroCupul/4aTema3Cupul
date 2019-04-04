@@ -5,10 +5,7 @@
  */
 package matriz_inversa;
 
-/**
- *
- * @author Carlos
- */
+
 public class Gausiano {
     
     public static void Gauss(double a[][], int index[])  {
