@@ -228,11 +228,11 @@ public class Interfaz extends javax.swing.JFrame {
             this.tableInversa.getTableHeader().setUI(null);
             this.tableInversa.setModel(tmi);
             this.tableInversa.setVisible(true);
-            //Inversa inver = new Inversa();
-            //double d[][] = inver.inversa(Matriz);
+            Inversa inver = new Inversa();//Se llama los datos de la clase
+            double d[][] = inver.inversa(Matriz);//Se declara el tipo de dato
             for(int i=0; i<table.getColumnCount(); i++){
                 for(int j=0; j<table.getColumnCount(); j++){
-                    //this.tableInversa.setValueAt(d[i][j], i, j);
+                    this.tableInversa.setValueAt(d[i][j], i, j);//Para los valores se declara en la siguiente tabla
                 }
             }
         } catch (Exception e){
